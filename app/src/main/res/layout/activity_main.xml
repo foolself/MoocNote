@@ -56,4 +56,17 @@
         android:layout_height="wrap_content"
         android:hint="MultiAutoCompleteTextView"/>
 
+    <ToggleButton
+        android:id="@+id/togbt1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:checked="false"
+        android:textOn="开"
+        android:textOff="关"/>
+    <ImageView
+        android:id="@+id/image1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/lightoff"/>
+
 </LinearLayout>

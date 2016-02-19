@@ -6,16 +6,20 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CompoundButton;
+import android.widget.ImageView;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.Toast;
+import android.widget.ToggleButton;
 
 /*
- * 1，button 实现点击事件三种方法：
+ * 1, button 实现点击事件三种方法：
  *         匿名内部类
  *         外部类
  *         接口
- * 2，通过自定义 TextView, 实现跑马灯效果
- * 3，AutoCompleteTextView 使用
+ * 2, 通过自定义 TextView, 实现跑马灯效果
+ * 3, AutoCompleteTextView 使用
+ * 4, ToggleButton 按钮实现开关效果
  */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -26,6 +30,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private MultiAutoCompleteTextView macTextView;
     private String[] res = {"beijing", "henan", "hebei", "shanghai", "shandong", "jinan"};
 
+    private ToggleButton tobt;
+    private ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -35,6 +41,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         bt2 = (Button) findViewById(R.id.button2);
         bt3 = (Button) findViewById(R.id.button3);
 
+        tobt = (ToggleButton) findViewById(R.id.togbt1);
+        imageView = (ImageView) findViewById(R.id.image1);
 
         //OnClickListener by inner class
         bt1.setOnClickListener(new View.OnClickListener() {
@@ -78,6 +86,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         macTextView.setAdapter(adapter);
         // set Tokenizer as ","
         macTextView.setTokenizer(new MultiAutoCompleteTextView.CommaTokenizer());
+
+        //ToggleButton set listener
+        tobt.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                tobt.setChecked(b);
+                imageView.setImageResource(b ? R.drawable.lighton : R.drawable.lightoff);
+            }
+        });
+
     }
 
     @Override
