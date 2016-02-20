@@ -2,10 +2,12 @@ package com.example.root.myapplication;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.MultiAutoCompleteTextView;
@@ -20,6 +22,8 @@ import android.widget.ToggleButton;
  * 2, 通过自定义 TextView, 实现跑马灯效果
  * 3, AutoCompleteTextView 使用
  * 4, ToggleButton 按钮实现开关效果
+ * 5, CheckBox
+ * 6, LinearLayout 外嵌套 ScrollView, 实现垂直滚动
  */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -32,6 +36,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private ToggleButton tobt;
     private ImageView imageView;
+
+    private CheckBox checkBox1;
+    private CheckBox checkBox2;
+    private android.util.Log log;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -96,6 +105,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
         });
 
+        checkBox1 = (CheckBox) findViewById(R.id.checkbox1);
+        checkBox2 = (CheckBox) findViewById(R.id.checkbox2);
+
+        checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                log.i("tag", "the football box checked");
+            }
+        });
     }
 
     @Override
@@ -103,6 +121,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toast.makeText(this, "ok, bt3 onclicked", 3).show();
     }
 }
+
 class MyOnClickListener implements View.OnClickListener {
     private int count = 0;
     @Override
