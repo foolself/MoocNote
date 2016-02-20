@@ -81,6 +81,24 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="basketball"/>
+
+        <RadioGroup
+            android:id="@+id/radioGroup1"
+            android:orientation="horizontal"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content">
+            <RadioButton
+                android:id="@+id/radioBt0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:checked="true"
+                android:text="male"/>
+            <RadioButton
+                android:id="@+id/radioBt1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="female"/>
+        </RadioGroup>
     </LinearLayout>
 </ScrollView>
 

@@ -11,6 +11,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.MultiAutoCompleteTextView;
+import android.widget.RadioGroup;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -39,7 +40,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     private CheckBox checkBox1;
     private CheckBox checkBox2;
-    private android.util.Log log;
+
+    private RadioGroup rg;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,7 +113,23 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         checkBox1.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
-                log.i("tag", "the football box checked");
+                Log.i("tag", "the football box checked");
+            }
+        });
+
+        //RadioGroup
+        rg = (RadioGroup) findViewById(R.id.radioGroup1);
+        rg.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(RadioGroup radioGroup, int i) {
+                switch (i) {
+                    case R.id.radioBt0:
+                        Log.i("tag", "the male checked");
+                        break;
+                    case R.id.radioBt1:
+                        Log.i("tag", "the female checked");
+                        break;
+                }
             }
         });
     }
