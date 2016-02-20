@@ -25,6 +25,7 @@ import android.widget.ToggleButton;
  * 4, ToggleButton 按钮实现开关效果
  * 5, CheckBox
  * 6, LinearLayout 外嵌套 ScrollView, 实现垂直滚动
+ * 7, RadioGroup
  */
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
