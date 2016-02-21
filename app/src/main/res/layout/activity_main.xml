@@ -99,6 +99,22 @@
                 android:layout_height="wrap_content"
                 android:text="female"/>
         </RadioGroup>
+
+    <Button
+        android:id="@+id/bt_activity_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start second activity"/>
+    <Button
+        android:id="@+id/bt_activity_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="start second activity with result"/>
+    <TextView
+        android:id="@+id/result_content"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=" here"/>
     </LinearLayout>
 </ScrollView>
 

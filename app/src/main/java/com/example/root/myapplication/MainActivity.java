@@ -1,5 +1,7 @@
 package com.example.root.myapplication;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -12,6 +14,7 @@ import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.RadioGroup;
+import android.widget.TextView;
 import android.widget.Toast;
 import android.widget.ToggleButton;
 
@@ -26,9 +29,11 @@ import android.widget.ToggleButton;
  * 5, CheckBox
  * 6, LinearLayout 外嵌套 ScrollView, 实现垂直滚动
  * 7, RadioGroup
+ * 8, Two modes to start other activity
  */
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+//public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+public class MainActivity extends Activity implements View.OnClickListener{
     private Button bt1;
     private Button bt2;
     private Button bt3;
@@ -43,6 +48,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private CheckBox checkBox2;
 
     private RadioGroup rg;
+
+    private Button bt_activity_1;
+    private Button bt_activity_2;
+    private TextView textView_result;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -133,6 +142,33 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }
         });
+
+        bt_activity_1 = (Button) findViewById(R.id.bt_activity_1);
+        bt_activity_2 = (Button) findViewById(R.id.bt_activity_2);
+        textView_result = (TextView) findViewById(R.id.result_content);
+        bt_activity_1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivity(intent);
+            }
+        });
+        bt_activity_2.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SecondActivity.class);
+                startActivityForResult(intent, 1);
+            }
+        });
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == 1 && resultCode == 2) {
+            String result = data.getStringExtra("data");
+            textView_result.setText(result);
+        }
     }
 
     @Override
