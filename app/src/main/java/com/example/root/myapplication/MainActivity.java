@@ -2,7 +2,6 @@ package com.example.root.myapplication;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -54,6 +53,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private TextView textView_result;
 
     private Button showListView;
+    private Button showDateView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -169,7 +169,17 @@ public class MainActivity extends Activity implements View.OnClickListener{
         showListView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MyListView.class);
+                Intent intent = new Intent(MainActivity.this, ListViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // DateView: datePicker, timePicker
+        showDateView = (Button) findViewById(R.id.showDateView);
+        showDateView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, DateActivity.class);
                 startActivity(intent);
             }
         });

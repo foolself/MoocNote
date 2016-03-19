@@ -19,7 +19,7 @@ import java.util.Map;
 /**
  * Created by root on 16-3-15.
  */
-public class MyListView extends Activity implements AdapterView.OnItemClickListener, AbsListView.OnScrollListener {
+public class ListViewActivity extends Activity implements AdapterView.OnItemClickListener, AbsListView.OnScrollListener {
     private ListView myListView;
     private ArrayAdapter arr_adapter;
     private SimpleAdapter sim_adapter;
@@ -27,7 +27,7 @@ public class MyListView extends Activity implements AdapterView.OnItemClickListe
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.mylistview);
+        setContentView(R.layout.activity_listview);
         myListView = (ListView) findViewById(R.id.listView1);
 
         // ArrayAdapter
