@@ -53,6 +53,8 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private Button bt_activity_2;
     private TextView textView_result;
 
+    private Button showListView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -158,6 +160,17 @@ public class MainActivity extends Activity implements View.OnClickListener{
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, SecondActivity.class);
                 startActivityForResult(intent, 1);
+            }
+        });
+
+
+        // ListView
+        showListView = (Button) findViewById(R.id.showListView);
+        showListView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, MyListView.class);
+                startActivity(intent);
             }
         });
     }
