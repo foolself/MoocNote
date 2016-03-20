@@ -10,6 +10,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.GridView;
 import android.widget.ImageView;
 import android.widget.MultiAutoCompleteTextView;
 import android.widget.RadioGroup;
@@ -29,6 +30,11 @@ import android.widget.ToggleButton;
  * 6, LinearLayout 外嵌套 ScrollView, 实现垂直滚动
  * 7, RadioGroup
  * 8, Two modes to start other activity
+ * 9, ListView
+ * 10, DatePicker, TimePicker
+ * 11, GridView
+ * 12, Spinner
+ * 13, ProgressBar
  */
 
 //public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -54,6 +60,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
     private Button showListView;
     private Button showDateView;
+    private Button showGridView;
+    private Button showSpinner;
+    private Button showProBar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -102,7 +111,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
          * 1st, 初始化控件
          * 2nd, 需要一个适配器
          * 3th, 初始化数据源
-         * 4th, 将当前的 adpter 与当前的 AutoCompleteTextView 绑定
+         * 4th, 将当前的 adapter 与当前的 AutoCompleteTextView 绑定
          * 5th, 设置分隔符，此处用逗号演示
          */
         macTextView = (MultiAutoCompleteTextView) findViewById(R.id.multitext1);
@@ -180,6 +189,36 @@ public class MainActivity extends Activity implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, DateActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // GridView
+        showGridView = (Button) findViewById(R.id.showGridView);
+        showGridView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, GridViewActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // Spinner
+        showSpinner = (Button) findViewById(R.id.showSpinner);
+        showSpinner.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, SpinnerActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // ProBar
+        showProBar = (Button) findViewById(R.id.showProBar);
+        showProBar.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, ProBarActivity.class);
                 startActivity(intent);
             }
         });

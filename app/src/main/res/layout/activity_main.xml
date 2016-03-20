@@ -120,12 +120,27 @@
             android:id="@+id/showListView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="showListView"/>
+            android:text="show ListView"/>
         <Button
             android:id="@+id/showDateView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="showDateView"/>
+            android:text="show DateView"/>
+        <Button
+            android:id="@+id/showGridView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show GridView"/>
+        <Button
+            android:id="@+id/showSpinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show Spinner"/>
+        <Button
+            android:id="@+id/showProBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="show ProBar"/>
     </LinearLayout>
 </ScrollView>
 
