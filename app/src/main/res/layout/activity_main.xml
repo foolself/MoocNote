@@ -141,6 +141,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="show ProBar"/>
+        <Button
+            android:id="@+id/showWebView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="WebView"/>
     </LinearLayout>
 </ScrollView>
 

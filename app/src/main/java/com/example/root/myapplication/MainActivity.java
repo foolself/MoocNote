@@ -35,6 +35,7 @@ import android.widget.ToggleButton;
  * 11, GridView
  * 12, Spinner
  * 13, ProgressBar
+ * 14, WebView
  */
 
 //public class MainActivity extends AppCompatActivity implements View.OnClickListener{
@@ -63,6 +64,7 @@ public class MainActivity extends Activity implements View.OnClickListener{
     private Button showGridView;
     private Button showSpinner;
     private Button showProBar;
+    private Button showWebView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -219,6 +221,16 @@ public class MainActivity extends Activity implements View.OnClickListener{
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, ProBarActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        // WebView
+        showWebView = (Button) findViewById(R.id.showWebView);
+        showWebView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, WebViewActivity.class);
                 startActivity(intent);
             }
         });
